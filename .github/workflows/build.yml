@@ -83,7 +83,7 @@ jobs:
         run: |
           $tag_name = "v$env:NEW_VERSION"
           $release_name = "Release $env:NEW_VERSION"
-          gh release create $tag_name --title "$release_name" --notes "Automated release" --target main --repo FrederoxDev/Amethyst --draft=true --prerelease=false
+          gh release create $tag_name --title "$release_name" --notes "Automated release" --target main --repo soksx/Amethyst --draft=true --prerelease=false
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -92,7 +92,7 @@ jobs:
         run: |
           $asset_path = "dist/AmethystRuntime@$env:NEW_VERSION.zip"
           $asset_label = "AmethystRuntime@$env:NEW_VERSION.zip"
-          gh release upload "v$env:NEW_VERSION" "$asset_path#$asset_label" --repo FrederoxDev/Amethyst
+          gh release upload "v$env:NEW_VERSION" "$asset_path#$asset_label" --repo soksx/Amethyst
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
